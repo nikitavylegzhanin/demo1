@@ -1,15 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+import { GraphQLServer } from 'graphql-yoga'
 
-const prisma = new PrismaClient()
+import context from './context'
+import schema from './schema'
 
-const main = async () => {
-  //
-}
-
-main()
-  .catch((e) => {
-    throw e
-  })
-  .finally(async () => {
-    await prisma.$disconnect()
-  })
+new GraphQLServer({ context, schema }).start()

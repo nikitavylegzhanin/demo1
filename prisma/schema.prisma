@@ -7,8 +7,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model user {
+model User {
   id       Int    @default(autoincrement()) @id
-  email    String @default("NULL") @unique
-  password String @default("NULL")
+  email    String @unique
+  password String
 }
