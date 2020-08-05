@@ -1,9 +1,9 @@
 import { objectType } from '@nexus/schema'
 
 export default objectType({
-  name: 'User',
+  name: 'AuthPayload',
   definition(t) {
-    t.model.id()
-    t.model.email()
+    t.string('token')
+    t.field('user', { type: 'User' })
   },
 })

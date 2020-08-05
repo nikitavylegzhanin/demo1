@@ -2,8 +2,14 @@
 ### Do not make changes to this file directly
 
 
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
 type Mutation {
-  signup(email: String!, password: String!): User!
+  login(email: String!, password: String!): AuthPayload!
+  signup(email: String!, password: String!): AuthPayload!
 }
 
 type Query {
@@ -13,5 +19,4 @@ type Query {
 type User {
   email: String!
   id: Int!
-  password: String!
 }
